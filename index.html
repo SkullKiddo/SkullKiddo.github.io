@@ -1,11 +1,449 @@
 <!DOCTYPE html>
-<html>
-<body scroll="no" style="overflow: hidden">
-<div>
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 110%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFKieDJMvM&#x2F;view?embed">
-  </iframe>
-</div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gabriel Puigdemunt | CV Variant 10</title>
+    <meta
+      name="description"
+      content="HTML version of CV variant 10 for Gabriel Puigdemunt."
+    />
+    <style>
+      :root {
+        --page-w: 210mm;
+        --page-h: 297mm;
+        --pad-top: 9.5mm;
+        --pad-x: 9.5mm;
+        --pad-bottom: 9mm;
+        --paper: #ffffff;
+        --paper-shadow: rgba(23, 32, 40, 0.12);
+        --ink: #151515;
+        --accent: #7a8a99;
+        --rule: rgba(122, 138, 153, 0.85);
+        --rule-w: 1px;
+        --fs-body: 9.25pt;
+        --fs-section: 13.5pt;
+        --fs-name: 29pt;
+        --lh-body: 1.22;
+        --font-serif: "Latin Modern Roman", "CMU Serif", "STIX Two Text",
+          "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "New York", Georgia, serif;
+        --font-display: "Latin Modern Roman", "CMU Serif", "Baskerville",
+          "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        --background: linear-gradient(180deg, #eef2f5 0%, #f7f8fa 24%, #edf1f4 100%);
+      }
 
-</body>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        color: var(--ink);
+        background: #edf1f4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        background: var(--background);
+        font-family: var(--font-serif);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: #556a7a;
+        text-decoration: underline;
+        text-underline-offset: 0.12em;
+      }
+
+      .page {
+        width: min(var(--page-w), calc(100vw - 2rem));
+        min-height: var(--page-h);
+        margin: 1.5rem auto;
+        padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+        background: var(--paper);
+        box-shadow: 0 20px 45px var(--paper-shadow);
+        font-size: var(--fs-body);
+        line-height: var(--lh-body);
+        font-family: var(--font-serif);
+      }
+
+      .masthead {
+        text-align: center;
+      }
+
+      .name {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: var(--fs-name);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.01em;
+      }
+
+      .headline {
+        margin: 2pt 0 0;
+        color: var(--accent);
+        font-size: 1em;
+        line-height: var(--lh-body);
+      }
+
+      .contact-line {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.1rem 0.45rem;
+        margin-top: 2pt;
+        font-size: 1em;
+        line-height: var(--lh-body);
+      }
+
+      .contact-sep {
+        color: var(--ink);
+      }
+
+      .section-title {
+        margin: 12pt 0 0;
+        padding-bottom: 6pt;
+        color: var(--accent);
+        border-bottom: var(--rule-w) solid var(--rule);
+        font-size: var(--fs-section);
+        font-weight: 700;
+        line-height: 1.05;
+      }
+
+      .profile-text,
+      .education-entry p,
+      .hobbies-text,
+      .experience-summary,
+      .skills-value {
+        margin: 0;
+      }
+
+      .experience-entry {
+        margin-top: 14pt;
+      }
+
+      .experience-entry:first-of-type {
+        margin-top: 4pt;
+      }
+
+      .experience-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: baseline;
+        gap: 2pt 24pt;
+      }
+
+      .experience-company {
+        margin: 0;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1.15;
+      }
+
+      .experience-dates {
+        font-size: 1em;
+        line-height: 1.15;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .experience-summary {
+        margin-top: 2pt;
+      }
+
+      .experience-list {
+        margin: 2pt 0 0 11pt;
+        padding: 0;
+      }
+
+      .experience-list li {
+        margin: 0;
+        padding-left: 2pt;
+      }
+
+      .education-entry {
+        display: grid;
+        gap: 1pt;
+        margin-top: 4pt;
+      }
+
+      .education-school,
+      .education-extra {
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1.15;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 8.5rem 1fr;
+        column-gap: 1.5rem;
+        row-gap: 2pt;
+        margin: 4pt 0 0;
+      }
+
+      .skills-label {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      .hobbies-text {
+        margin-top: 4pt;
+      }
+
+      @media (max-width: 720px) {
+        body {
+          background: #ffffff;
+        }
+
+        .page {
+          width: 100%;
+          min-height: auto;
+          margin: 0;
+          padding: 1.2rem 1rem 1.5rem;
+          box-shadow: none;
+          font-size: 15px;
+        }
+
+        .name {
+          font-size: clamp(2.3rem, 10vw, 3.2rem);
+        }
+
+        .section-title {
+          margin-top: 1rem;
+          padding-bottom: 0.25rem;
+          font-size: 1.3em;
+        }
+
+        .experience-header,
+        .skills-grid {
+          grid-template-columns: 1fr;
+          gap: 0.15rem;
+        }
+
+        .experience-dates {
+          white-space: normal;
+        }
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .page {
+          width: var(--page-w);
+          min-height: var(--page-h);
+          margin: 0;
+          padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+          box-shadow: none;
+        }
+
+        .experience-entry,
+        .skills-grid,
+        section {
+          break-inside: avoid;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <h1 class="name">Gabriel Puigdemunt</h1>
+        <p class="headline">
+          Java Back-end Developer | API Development | Distributed Systems | SuiteScript
+        </p>
+        <div class="contact-line" aria-label="Contact information">
+          <a href="mailto:gabrielpuigdemunt@gmail.com">gabrielpuigdemunt@gmail.com</a>
+          <span class="contact-sep" aria-hidden="true">|</span>
+          <a href="tel:+34622926696">622 926 696</a>
+          <span class="contact-sep" aria-hidden="true">|</span>
+          <span>Barcelona, Spain</span>
+          <span class="contact-sep" aria-hidden="true">|</span>
+          <a href="https://skullkiddo.github.io" rel="noreferrer" target="_blank">
+            skullkiddo.github.io
+          </a>
+        </div>
+      </header>
+
+      <section aria-labelledby="profile-title">
+        <h2 class="section-title" id="profile-title">Profile</h2>
+        <p class="profile-text">
+          Java back-end developer with experience in API development, distributed systems,
+          enterprise platforms, and cloud-native tooling across Spring, SuiteScript, CI/CD,
+          and Kubernetes.
+        </p>
+      </section>
+
+      <section aria-labelledby="experience-title">
+        <h2 class="section-title" id="experience-title">Experience</h2>
+
+        <article class="experience-entry">
+          <div class="experience-header">
+            <h3 class="experience-company">
+              <a href="https://www.netsuite.com/portal/home.shtml" rel="noreferrer" target="_blank">
+                NetSuite
+              </a>
+            </h3>
+            <div class="experience-dates">01/2025 &ndash; Present</div>
+          </div>
+          <p class="experience-summary">
+            Java back-end developer focused on SuiteScript API development and integrations.
+          </p>
+          <ul class="experience-list">
+            <li>SuiteScript API development</li>
+            <li>API design and implementation</li>
+            <li>NetSuite integrations</li>
+            <li>JavaScript development</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-header">
+            <h3 class="experience-company">
+              <a href="https://symphony.com/" rel="noreferrer" target="_blank">
+                Symphony Communications
+              </a>
+            </h3>
+            <div class="experience-dates">11/2023 &ndash; 01/2025</div>
+          </div>
+          <p class="experience-summary">
+            Java back-end developer working on client-facing products in a multi-developer
+            environment.
+          </p>
+          <ul class="experience-list">
+            <li>Spring</li>
+            <li>MongoDB</li>
+            <li>JUnit + Mockito</li>
+            <li>GCP + Kubernetes (GKE)</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-header">
+            <h3 class="experience-company">
+              <a href="https://www.bsc.es/" rel="noreferrer" target="_blank">
+                Barcelona Supercomputing Center
+              </a>
+            </h3>
+            <div class="experience-dates">12/2020 &ndash; 9/2023</div>
+          </div>
+          <p class="experience-summary">
+            COMPSs parallel and distributed framework developer. Developed an agent-based
+            approach for exascale distributed computing.
+          </p>
+          <ul class="experience-list">
+            <li>Parallel and distributed Java development</li>
+            <li>Bash scripting</li>
+            <li>CI/CD and testing (GitLab CI/CD, Jenkins, unit testing)</li>
+            <li>Python and scikit-learn for machine learning development</li>
+            <li>Git version control</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-header">
+            <h3 class="experience-company">
+              <a href="https://www.fama-systems.com/" rel="noreferrer" target="_blank">
+                Fama Systems
+              </a>
+            </h3>
+            <div class="experience-dates">02/2019 &ndash; 08/2020</div>
+          </div>
+          <p class="experience-summary">J2EE full-stack developer</p>
+          <ul class="experience-list">
+            <li>Java development</li>
+            <li>JSP + XML</li>
+            <li>HTML + JavaScript</li>
+            <li>Hibernate + SQL database management</li>
+            <li>Git version control</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-header">
+            <h3 class="experience-company">
+              <a href="https://arilex.es/" rel="noreferrer" target="_blank">Arilex</a>
+            </h3>
+            <div class="experience-dates">06/2018 &ndash; 07/2018</div>
+          </div>
+          <p class="experience-summary">Workshop Assembler</p>
+        </article>
+
+        <article class="experience-entry">
+          <div class="experience-header">
+            <h3 class="experience-company">
+              <a href="https://www.telefonica.com/en/" rel="noreferrer" target="_blank">
+                Telef&oacute;nica
+              </a>
+              &amp;&amp;
+              <a href="https://www.jovenesinventores.es/" rel="noreferrer" target="_blank">
+                J&oacute;venes Inventores
+              </a>
+            </h3>
+            <div class="experience-dates">2016 &ndash; 2019</div>
+          </div>
+          <p class="experience-summary">
+            Technology, programming, and robotics teacher at Mobile World Centre and various
+            schools
+          </p>
+        </article>
+      </section>
+
+      <section aria-labelledby="education-title">
+        <h2 class="section-title" id="education-title">Education</h2>
+        <div class="education-entry">
+          <div class="education-school">
+            <a href="https://www.upc.edu/en/homepage" rel="noreferrer" target="_blank">
+              Polytechnic University of Catalonia
+            </a>
+          </div>
+          <p>B.S. in Computer Science</p>
+          <p>Hardware specialization</p>
+          <div class="education-extra">Computer Security Course (40h)</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title">Skills</h2>
+        <dl class="skills-grid">
+          <dt class="skills-label">Languages</dt>
+          <dd class="skills-value">Java, Python, JavaScript, Bash</dd>
+
+          <dt class="skills-label">Frameworks</dt>
+          <dd class="skills-value">Spring, SuiteScript, JSP, Hibernate</dd>
+
+          <dt class="skills-label">Databases</dt>
+          <dd class="skills-value">MongoDB, SQL</dd>
+
+          <dt class="skills-label">Cloud/DevOps</dt>
+          <dd class="skills-value">Docker, Kubernetes, Jenkins, GitLab CI/CD</dd>
+
+          <dt class="skills-label">Tools</dt>
+          <dd class="skills-value">Git, Linux, Agile, Scrum, Jira</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="hobbies-title">
+        <h2 class="section-title" id="hobbies-title">Hobbies</h2>
+        <p class="hobbies-text">Board games, Music, Sports, Cooking, Videogames</p>
+      </section>
+    </main>
+  </body>
 </html>
